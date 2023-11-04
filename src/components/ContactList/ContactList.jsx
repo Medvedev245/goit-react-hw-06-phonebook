@@ -5,14 +5,17 @@ import { onDelete } from 'components/Redux/store';
 
 export const ContactList = () => {
   const value = useSelector(state => state.contacts.contacts);
-  const nameFromFilter = useSelector(state => state.filter);
-  console.log(value);
-  console.log(nameFromFilter);
+  const nameFromFilter = useSelector(state => state.filter.filter) || '';
   const filteredContacts = value.filter(({ name }) =>
-    name.includes(nameFromFilter)
+    name.toLowerCase().includes(nameFromFilter.toLowerCase())
   );
 
+  // const filteredContacts = value.map(({ name }) =>
+  //   console.log(name.toLowerCase())
+  // );
   console.log(filteredContacts);
+  // console.log(value);
+  // console.log(typeof nameFromFilter);
 
   const dispatch = useDispatch();
 
