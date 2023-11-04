@@ -4,13 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onDelete } from 'components/Redux/store';
 
 export const ContactList = () => {
-  const value = useSelector(state => state.contacts);
+  const value = useSelector(state => state.contacts.contacts);
   const nameFromFilter = useSelector(state => state.filter);
   console.log(value);
   console.log(nameFromFilter);
   const filteredContacts = value.filter(({ name }) =>
-    name.toLowerCase().includes(nameFromFilter.toLocaleLowerCase())
+    name.includes(nameFromFilter)
   );
+
+  console.log(filteredContacts);
 
   const dispatch = useDispatch();
 
