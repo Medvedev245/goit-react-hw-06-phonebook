@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
-import { List, Item, Button } from './ContactList.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { onDelete } from 'components/Redux/store';
-
+import { List } from './ContactList.styled';
+import { useSelector } from 'react-redux';
+// import { onDelete } from 'components/Redux/store';
+{
+  /* Item, Button useDispatch*/
+}
 export const ContactList = () => {
   const value = useSelector(state => state.contacts);
   const nameFromFilter = useSelector(state => state.filter);
@@ -12,7 +14,7 @@ export const ContactList = () => {
   //   name.toLowerCase().includes(nameFromFilter.toLocaleLowerCase())
   // );
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <List>
