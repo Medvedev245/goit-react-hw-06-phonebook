@@ -4,16 +4,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onDelete } from 'components/Redux/store';
 
 export const ContactList = () => {
-  const elements = useSelector(state => state);
-  const contact = elements.contacts.filter(({ name }) =>
-    name.toLowerCase().includes(elements.filter.toLowerCase())
-  );
+  const value = useSelector(state => state.contacts);
+  const nameFromFilter = useSelector(state => state.filter);
+  console.log(value);
+  console.log(nameFromFilter);
+  // const filteredContacts = value.filter(({ name }) =>
+  //   name.toLowerCase().includes(nameFromFilter.toLocaleLowerCase())
+  // );
 
   const dispatch = useDispatch();
 
   return (
     <List>
-      {contact.map(({ id, name, number }) => (
+      hi
+      {/* {filteredContacts.map(({ id, name, number }) => (
         <Item key={id}>
           {name}: {number}
           <Button
@@ -24,7 +28,7 @@ export const ContactList = () => {
             Delete
           </Button>
         </Item>
-      ))}
+      ))} */}
     </List>
   );
 };
