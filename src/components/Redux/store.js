@@ -25,8 +25,7 @@ const contactsInitialState = {
 };
 
 // ------------NEW------------
-const filterInitialState = '';
-const filterReducer = (state = filterInitialState, action) => {
+const filterReducer = (state = '', action) => {
   switch (action.type) {
     case 'contacts/filter':
       return {
